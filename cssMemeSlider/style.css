@@ -1,0 +1,24 @@
+
+
+.slider-container { 
+    max-width: 1280px;
+    
+    margin: 0 auto;
+    height: 550px;
+}
+
+.slide { 
+
+    margin-top: 100px;
+    margin: 0 auto;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: [height];
+    background-repeat: no-repeat;
+  }
+
+
+
+ 
