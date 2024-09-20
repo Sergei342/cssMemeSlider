@@ -1,49 +1,89 @@
 
-
-.slider-container { 
-    max-width: 1280px;
-    
-    margin: 0 auto;
+ .slider {
+    max-width: 880px;
+    width: 100%;
     height: 550px;
-}
-
-
-
-
-.wrapper { 
-    display: flex;
-    justify-content: center;
     position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 100px 0 auto;
     overflow: hidden;
-    
-}
+    margin: 0 auto;
+  }
 
-.slide{ 
-    position: absolute;
+  /* Контейнер для слайдов */
+  .slides {
+    display: flex;
+    width: 300%; /* Чтобы все слайды уместились */
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  /* Каждый слайд */
+  .slide {
     width: 100%;
     height: 100%;
-}
-.slide { 
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    font-size: 2em;
+    color: rgb(44, 35, 35);
+    background-size: contain;
+    background-position: center;
+  }
 
-.button { 
-    margin: 10px;
-}
+  /* Разные цвета для слайдов */
+  .slide:nth-child(1) {
+    background-image: url(/cssMemeSlider/source/mem1.png);
+  }
+  .slide:nth-child(2) {
+    background-image: url(/cssMemeSlider/source/mem2.png);
+  }
+  .slide:nth-child(3) {
+    background-image: url(/cssMemeSlider/source/mem3.png);
+  }
 
-.wrapper .slide:nth-child(1) {
+  /* Скрываем радио-кнопки */
+  input[type="radio"] {
+    display: none;
+  }
+
+  /* Позиционирование слайдов в зависимости от выбранного radio */
+  #slide1:checked ~ .slides {
     transform: translateX(0);
   }
-  
-  .wrapper .slide:nth-child(2) {
+
+  #slide2:checked ~ .slides {
     transform: translateX(-100%);
   }
-  
-  .wrapper .slide:nth-child(3) {
+
+  #slide3:checked ~ .slides {
     transform: translateX(-200%);
+  }
+
+  /* Навигация для выбора слайда */
+  .navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 95%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .navigation label {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Меняем цвет метки для активного слайда */
+  #slide1:checked ~ .navigation label[for="slide1"],
+  #slide2:checked ~ .navigation label[for="slide2"],
+  #slide3:checked ~ .navigation label[for="slide3"] {
+    background-color: rgba(255, 0, 0, 0.8);
+    border-color: rgba(255, 0, 0, 1);
   }
