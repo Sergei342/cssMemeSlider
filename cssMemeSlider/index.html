@@ -7,27 +7,31 @@
     <link rel="stylesheet" href="/cssMemeSlider/style.css">
 </head>
 <body>
-  <div class="slider-container">
-    <!-- Slide 1 -->
-     <div class="wrapper">
-    <div class="slide" style="background-image: url('/cssMemeSlider/source/mem1.jpg');">
-      <h2>Slide 1</h2>
+  <div class="slider">
+    <!-- Радио-кнопки для управления слайдами -->
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+
+    <!-- Контейнер слайдов -->
+    <div class="slides">
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
     </div>
-    <!-- Slide 2 -->
-    <div class="slide" style="background-image: url('/cssMemeSlider/source/mem2.png');">
-      <h2>Slide 2</h2>
+
+    <!-- Индикаторы -->
+    <div class="navigation">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
     </div>
-    <!-- Slide 3 -->
-    <div class="slide" style="background-image: url('/cssMemeSlider/source/mem3.jpg');">
-      <h2>Slide 3</h2>
-    </div>
-  </div>
-  <input class="button" type="radio">
-  <input class="button" type="radio">
-  <input class="button" type="radio">
   </div>
 
- 
+
+  
+
+
 
 </body>
 </html>
